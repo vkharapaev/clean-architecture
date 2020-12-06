@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TestApp2</string>
+    <string name="saved_app_state_run_count_key">RUN_COUNT</string>
+</resources>

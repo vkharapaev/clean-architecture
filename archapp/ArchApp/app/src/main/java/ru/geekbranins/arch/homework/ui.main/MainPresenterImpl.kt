@@ -21,7 +21,7 @@ class MainPresenterImpl(
             }
 
             override fun onSuccess(shouldShowRateProposal: Boolean) {
-                if (shouldShowRateProposal == true) {
+                if (shouldShowRateProposal) {
                     view.showRateProposal()
                 }
             }

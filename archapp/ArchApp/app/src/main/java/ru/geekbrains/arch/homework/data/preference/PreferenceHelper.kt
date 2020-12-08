@@ -1,4 +1,4 @@
-package ru.geekbrains.arch.homework.data.launch
+package ru.geekbrains.arch.homework.data.preference
 
 import android.content.Context
 import androidx.preference.PreferenceManager

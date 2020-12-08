@@ -1,4 +1,4 @@
-package ru.geekbrains.arch.homework.util
+package ru.geekbrains.arch.homework.util.logger
 
 import android.util.Log
 

@@ -4,7 +4,7 @@ import io.reactivex.SingleObserver
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import ru.geekbrains.arch.homework.interactor.main.MainInteractor
-import ru.geekbrains.arch.homework.util.Logger
+import ru.geekbrains.arch.homework.util.logger.Logger
 
 class MainPresenterImpl(
     private val view: MainPresenter.View,

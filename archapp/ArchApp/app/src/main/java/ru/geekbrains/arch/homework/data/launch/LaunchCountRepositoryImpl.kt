@@ -2,6 +2,7 @@ package ru.geekbrains.arch.homework.data.launch
 
 import io.reactivex.Completable
 import io.reactivex.Single
+import ru.geekbrains.arch.homework.data.preference.PreferenceHelper
 import ru.geekbrains.arch.homework.repository.LaunchCountRepository
 
 class LaunchCountRepositoryImpl(private val preferenceHelper: PreferenceHelper) :

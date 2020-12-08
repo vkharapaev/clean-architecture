@@ -4,9 +4,9 @@ import android.app.Application
 import io.reactivex.CompletableObserver
 import io.reactivex.disposables.Disposable
 import ru.geekbrains.arch.homework.data.launch.LaunchCountRepositoryImpl
-import ru.geekbrains.arch.homework.data.launch.PreferenceHelper
+import ru.geekbrains.arch.homework.data.preference.PreferenceHelper
 import ru.geekbrains.arch.homework.interactor.appstart.AppStartInteractorImpl
-import ru.geekbrains.arch.homework.util.LoggerImpl
+import ru.geekbrains.arch.homework.util.logger.LoggerImpl
 
 class HomeWorkApplication : Application() {
 

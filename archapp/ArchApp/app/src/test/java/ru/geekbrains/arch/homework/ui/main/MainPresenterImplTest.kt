@@ -9,7 +9,7 @@ import org.mockito.Mock
 import org.mockito.Mockito.*
 import org.mockito.junit.MockitoJUnitRunner
 import ru.geekbrains.arch.homework.interactor.main.MainInteractor
-import ru.geekbrains.arch.homework.util.Logger
+import ru.geekbrains.arch.homework.util.logger.Logger
 
 @RunWith(MockitoJUnitRunner::class)
 class MainPresenterImplTest {

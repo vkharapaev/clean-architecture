@@ -16,17 +16,17 @@ class MainPresenterImpl(
 
     override fun onStart() {
         mainInteractor.shouldShowRateProposal().subscribe(object : SingleObserver<Boolean> {
-            override fun onSubscribe(disposable: Disposable?) {
+            override fun onSubscribe(disposable: Disposable) {
                 compositeDisposable.add(disposable)
             }
 
-            override fun onSuccess(shouldShowRateProposal: Boolean?) {
+            override fun onSuccess(shouldShowRateProposal: Boolean) {
                 if (shouldShowRateProposal == true) {
                     view.showRateProposal()
                 }
             }
 
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 logger.logException(TAG, "Should show rate error", e)
             }
         })

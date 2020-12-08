@@ -8,7 +8,7 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
 import org.mockito.Mockito.verify
-import org.mockito.runners.MockitoJUnitRunner
+import org.mockito.junit.MockitoJUnitRunner
 import ru.geekbrains.arch.homework.repository.LaunchCountRepository
 
 @RunWith(MockitoJUnitRunner::class)

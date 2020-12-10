@@ -6,7 +6,7 @@ import com.headmost.cleanarch.testapp.interfaceadapters.presenters.UserPresenter
 class UserActivityModule (private val applicationModule: ApplicationModule) {
 
     private fun getUserInteractorProvider(): UserInteractorProvider {
-        return UserInteractorProvider(applicationModule.getUserRepositoryProvider())
+        return UserInteractorProvider(applicationModule.provideUserRepositoryProvider())
     }
 
     private fun getUserActivityPresenterProvider(): UserActivityPresenterProvider {
@@ -14,7 +14,7 @@ class UserActivityModule (private val applicationModule: ApplicationModule) {
     }
 
     fun getUserPresenter(userActivity: UserActivity): UserPresenter {
-        return getUserActivityPresenterProvider().providePresenter(userActivity)
+        return getUserActivityPresenterProvider().provideUserPresenter(userActivity)
     }
 
 }

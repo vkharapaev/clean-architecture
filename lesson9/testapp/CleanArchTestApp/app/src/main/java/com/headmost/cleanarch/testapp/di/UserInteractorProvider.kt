@@ -5,12 +5,11 @@ import com.headmost.cleanarch.testapp.usecases.interactors.UserInteractorImpl
 
 class UserInteractorProvider(private val userRepositoryProvider: UserRepositoryProvider) {
 
-    private lateinit var userInteractor: UserInteractor
+    private val userInteractor by lazy {
+        UserInteractorImpl(userRepositoryProvider.provideUserRepository())
+    }
 
     fun provideUserInteractor(): UserInteractor {
-        if (!this::userInteractor.isInitialized) {
-            userInteractor = UserInteractorImpl(userRepositoryProvider.provideUserRepository())
-        }
         return userInteractor
     }
 }

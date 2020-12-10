@@ -1,30 +1,19 @@
 package com.headmost.cleanarch.testapp.di
 
 class ApplicationModule {
-
-    private lateinit var jsonPlaceHolderApiProvider: JsonPlaceHolderApiProvider
-    private lateinit var userDataSourceProvider: UserDataSourceProvider
-    private lateinit var userRepositoryProvider: UserRepositoryProvider
-
-    private fun getJsonPlaceHolderApliProvider(): JsonPlaceHolderApiProvider {
-        if (!this::jsonPlaceHolderApiProvider.isInitialized) {
-            jsonPlaceHolderApiProvider = JsonPlaceHolderApiProvider()
-        }
-        return jsonPlaceHolderApiProvider
+    private val jsonPlaceHolderApiProvider by lazy {
+        JsonPlaceHolderApiProvider()
     }
 
-    private fun getUserDataSourceProvider(): UserDataSourceProvider {
-        if (!this::jsonPlaceHolderApiProvider.isInitialized) {
-            userDataSourceProvider = UserDataSourceProvider(getJsonPlaceHolderApliProvider())
-        }
-        return userDataSourceProvider
+    private val userDataSourceProvider by lazy {
+        UserDataSourceProvider(jsonPlaceHolderApiProvider)
     }
 
-    fun getUserRepositoryProvider(): UserRepositoryProvider {
-        if (!this::userRepositoryProvider.isInitialized) {
-            userRepositoryProvider = UserRepositoryProvider(getUserDataSourceProvider())
-        }
+    private val userRepositoryProvider by lazy {
+        UserRepositoryProvider(userDataSourceProvider)
+    }
+
+    fun provideUserRepositoryProvider(): UserRepositoryProvider {
         return userRepositoryProvider
     }
-
 }

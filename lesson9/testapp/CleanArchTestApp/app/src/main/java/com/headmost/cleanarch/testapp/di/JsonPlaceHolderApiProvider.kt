@@ -4,12 +4,11 @@ import com.headmost.cleanarch.testapp.frameworks.network.JsonPlaceHolderApi
 
 class JsonPlaceHolderApiProvider {
 
-    private lateinit var jsonPlaceHolderApi: JsonPlaceHolderApi
+    private val jsonPlaceHolderApi by lazy {
+        JsonPlaceHolderApi()
+    }
 
     fun provideJsonPlaceHolderApi(): JsonPlaceHolderApi {
-        if (!this::jsonPlaceHolderApi.isInitialized) {
-            jsonPlaceHolderApi = JsonPlaceHolderApi()
-        }
         return jsonPlaceHolderApi
     }
 }

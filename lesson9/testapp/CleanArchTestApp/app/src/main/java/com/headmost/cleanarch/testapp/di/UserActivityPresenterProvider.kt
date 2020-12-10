@@ -8,7 +8,7 @@ class UserActivityPresenterProvider(private val userInteractorProvider: UserInte
 
     private lateinit var userPresenter: UserPresenter
 
-    fun providePresenter(userActivity: UserActivity): UserPresenter {
+    fun provideUserPresenter(userActivity: UserActivity): UserPresenter {
         if (!this::userPresenter.isInitialized) {
             userPresenter = UserPresenterImpl(userActivity, userInteractorProvider.provideUserInteractor())
         }

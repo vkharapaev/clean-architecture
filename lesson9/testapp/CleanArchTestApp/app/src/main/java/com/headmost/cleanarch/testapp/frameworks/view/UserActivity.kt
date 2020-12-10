@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.headmost.cleanarch.testapp.R
 import com.headmost.cleanarch.testapp.di.AppModuleProvider
+import com.headmost.cleanarch.testapp.di.UserActivityInjector
 import com.headmost.cleanarch.testapp.di.UserActivityModule
 import com.headmost.cleanarch.testapp.entities.User
 import com.headmost.cleanarch.testapp.interfaceadapters.presenters.UserPresenter
@@ -29,9 +30,7 @@ class UserActivity : AppCompatActivity(), UserView {
         progressBar = findViewById(R.id.progressBar)
         textView = findViewById(R.id.text)
 
-        val applicationModule = (application as AppModuleProvider).provideApplicationModule()
-
-        presenter = UserActivityModule(applicationModule).getUserPresenter(this)
+        UserActivityInjector().inject(this)
 
         button.setOnClickListener { presenter?.onUserAction() }
     }

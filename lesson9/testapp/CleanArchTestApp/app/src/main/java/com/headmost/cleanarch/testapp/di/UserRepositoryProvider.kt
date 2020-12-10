@@ -5,12 +5,11 @@ import com.headmost.cleanarch.testapp.usecases.repositories.UserRepository
 
 class UserRepositoryProvider(private val userDataSourceProvider: UserDataSourceProvider) {
 
-    private lateinit var userRepository: UserRepository
+    private val userRepository by lazy {
+        UserRepositoryImpl(userDataSourceProvider.provideUserDataSource())
+    }
 
     fun provideUserRepository(): UserRepository {
-        if (!this::userRepository.isInitialized) {
-            userRepository = UserRepositoryImpl(userDataSourceProvider.provideUserDataSource())
-        }
         return userRepository
     }
 }

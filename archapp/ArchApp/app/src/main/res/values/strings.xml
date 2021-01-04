@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ArchApp</string>
+    <string name="flickr_api_key">4f980507fdf246bade251b3cf182ed64</string>
+    <string name="flickr_host" translatable="false">https://api.flickr.com</string>
 </resources>

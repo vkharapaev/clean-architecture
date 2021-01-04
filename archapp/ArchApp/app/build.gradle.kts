@@ -44,14 +44,30 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.2.0")
     implementation("com.google.android.material:material:1.2.1")
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
-    implementation("io.reactivex.rxjava2:rxandroid:2.0.0")
-    implementation("io.reactivex.rxjava2:rxjava:2.0.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+
+    // RxJava
+    implementation("io.reactivex.rxjava2:rxjava:2.2.20")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.0")
+
+    // Retrofit + Gson + OkHttp
     implementation("com.google.code.gson:gson:2.8.6")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:3.11.0")
+
+    // Glide
+    implementation("com.github.bumptech.glide:glide:4.8.0")
+    annotationProcessor("androidx.annotation:annotation:1.1.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.8.0")
+
+    // Toothpick
+    implementation("com.github.stephanenicolas.toothpick:toothpick-runtime:1.1.3")
+    annotationProcessor("com.github.stephanenicolas.toothpick:toothpick-compiler:1.1.3")
+
     implementation("androidx.preference:preference-ktx:1.1.1")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.1")
+
     testImplementation("junit:junit:4.13.1")
     testImplementation("org.mockito:mockito-core:1.10.19")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")

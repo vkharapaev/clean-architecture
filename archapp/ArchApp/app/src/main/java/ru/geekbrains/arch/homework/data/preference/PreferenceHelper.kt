@@ -4,8 +4,9 @@ import android.content.Context
 import androidx.preference.PreferenceManager
 import io.reactivex.Completable
 import io.reactivex.Single
+import javax.inject.Inject
 
-class PreferenceHelper(private val context: Context) {
+class PreferenceHelper @Inject constructor(private val context: Context) {
 
     fun put(paramKey: String, value: Int): Completable {
         return Completable.fromAction {

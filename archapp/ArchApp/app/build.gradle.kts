@@ -1,7 +1,8 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    kotlin("android.extensions")
+//    kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 android {
@@ -58,18 +59,19 @@ dependencies {
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.8.0")
-    annotationProcessor("androidx.annotation:annotation:1.1.0")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.8.0")
+    kapt("androidx.annotation:annotation:1.1.0")
+    kapt("com.github.bumptech.glide:compiler:4.8.0")
 
     // Toothpick
-    implementation("com.github.stephanenicolas.toothpick:toothpick-runtime:1.1.3")
-    annotationProcessor("com.github.stephanenicolas.toothpick:toothpick-compiler:1.1.3")
+    implementation("com.github.stephanenicolas.toothpick:ktp:3.1.0")
+    kapt("com.github.stephanenicolas.toothpick:toothpick-compiler:3.1.0")
 
     implementation("androidx.preference:preference-ktx:1.1.1")
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.1")
 
     testImplementation("junit:junit:4.13.1")
-    testImplementation("org.mockito:mockito-core:1.10.19")
+    testImplementation("org.mockito:mockito-core:3.6.28")
     androidTestImplementation("androidx.test.ext:junit:1.1.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    testImplementation("com.github.stephanenicolas.toothpick:toothpick-testing-junit5:3.1.0")
 }

@@ -2,8 +2,9 @@ package ru.geekbrains.arch.homework.interactor.main
 
 import io.reactivex.Single
 import ru.geekbrains.arch.homework.repository.LaunchCountRepository
+import javax.inject.Inject
 
-class MainInteractorImpl(private val launchCountRepository: LaunchCountRepository) :
+class MainInteractorImpl @Inject constructor(private val launchCountRepository: LaunchCountRepository) :
     MainInteractor {
 
     override fun shouldShowRateProposal(): Single<Boolean> {

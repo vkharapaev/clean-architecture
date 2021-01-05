@@ -4,8 +4,9 @@ import io.reactivex.Completable
 import io.reactivex.Single
 import ru.geekbrains.arch.homework.data.preference.PreferenceHelper
 import ru.geekbrains.arch.homework.repository.LaunchCountRepository
+import javax.inject.Inject
 
-class LaunchCountRepositoryImpl(private val preferenceHelper: PreferenceHelper) :
+class LaunchCountRepositoryImpl @Inject constructor(private val preferenceHelper: PreferenceHelper) :
     LaunchCountRepository {
 
     override fun setLaunchNumber(launchNumber: Int): Completable {

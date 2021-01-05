@@ -5,4 +5,5 @@ import ru.geekbrains.arch.homework.domain.Photo
 
 interface PhotoDataSource {
     fun getRecent(pageNumber: Int, perPage: Int): Single<List<Photo>>
+    fun search(query: String, pageNumber: Int, perPage: Int): Single<List<Photo>>
 }

@@ -5,14 +5,15 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import ru.geekbrains.arch.homework.interactor.main.MainInteractor
 import ru.geekbrains.arch.homework.util.logger.Logger
+import javax.inject.Inject
 
-class MainPresenterImpl(
+class MainPresenterImpl @Inject constructor(
     private val view: MainPresenter.View,
     private val mainInteractor: MainInteractor,
     private val logger: Logger
 ) : MainPresenter {
 
-    private val compositeDisposable: CompositeDisposable
+    private val compositeDisposable = CompositeDisposable()
 
     override fun onStart() {
         mainInteractor.shouldShowRateProposal().subscribe(object : SingleObserver<Boolean> {
@@ -44,10 +45,6 @@ class MainPresenterImpl(
 
     companion object {
         private const val TAG = "Main"
-    }
-
-    init {
-        compositeDisposable = CompositeDisposable()
     }
 
 }
